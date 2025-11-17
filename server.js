@@ -10,7 +10,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Serve static frontend
-app.use(express.static(path.join(__dirname, "public/index.html")));
+app.use(express.static(path.join(__dirname, "public")));
 
 // Email setup
 const transporter = nodemailer.createTransport({
@@ -46,7 +46,7 @@ app.post("/api/contact", async (req, res) => {
 
 // Fallback to index.html
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "/public/index.html"));
+  res.sendFile(path.join(__dirname, "public/index.html"));
 });
 
 module.exports = app;
