@@ -10,7 +10,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Serve static frontend
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "public/index.html")));
 
 // Email setup
 const transporter = nodemailer.createTransport({
