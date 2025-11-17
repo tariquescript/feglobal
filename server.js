@@ -1,62 +1,38 @@
+// server.js
+
 require("dotenv").config();
 const express = require("express");
 const nodemailer = require("nodemailer");
 const path = require("path");
-const cors = require("cors");
 const bodyParser = require("body-parser");
 
 const app = express();
-app.use(cors());
 app.use(bodyParser.json());
 
-// Serve static frontend
-app.use(express.static(path.join(__dirname, "public")));
-
-// Email setup
-const transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS
-  },
-});
-
+// Email / API route
 app.post("/api/contact", async (req, res) => {
   const { name, email, message } = req.body;
-
-  // ❗ VALIDATION GOES HERE
   if (!name || !email || !message) {
-    return res
-      .status(400)
-      .json({ success: false, msg: "All fields required" });
+    return res.status(400).json({ success: false, msg: "All fields required" });
   }
-
-
-
-
   try {
+    // transporter config ...
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
       to: process.env.EMAIL_USER,
-      subject: "New Contact Form Submission",
-      html: `
-        <h2>New Message from Website</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Message:</strong> ${message}</p>
-      `,
+      subject: "Contact Form",
+      html: `<p>${message}</p><p>From: ${name} (${email})</p>`
     });
-
-    return res.json({ success: true, msg: "Email sent successfully" });
+    res.json({ success: true, msg: "Email sent" });
   } catch (err) {
-    console.error("Email Error:", err);
-    return res.status(500).json({ success: false, msg: "Email failed" });
+    console.error("Mail error:", err);
+    res.status(500).json({ success: false, msg: "Email failed" });
   }
 });
 
-// Fallback to index.html
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "public/index.html"));
+// Fallback route — this is optional if you want to serve index.html for all non-API paths
+app.get("/*", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
 module.exports = app;
