@@ -22,11 +22,15 @@ const transporter = nodemailer.createTransport({
 });
 
 app.post("/api/contact", async (req, res) => {
-  const { name, email, message } = req.body;  if (!name || !email || !message) {
+  const { name, email, message } = req.body;
+
+  // ❗ VALIDATION GOES HERE
+  if (!name || !email || !message) {
     return res
       .status(400)
       .json({ success: false, msg: "All fields required" });
   }
+
 
 
 
