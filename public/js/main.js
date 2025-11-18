@@ -18,15 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // load programs onto index and programs pages
-  fetch('/api/programs')
-    .then(res => res.json())
-    .then(data => {
-      populatePrograms(data);
-    })
-    .catch(()=> {
-      console.warn('Could not load programs');
-      populatePrograms([]); // still render empty state
-    });
+ populatePrograms(programsData);
 
   // contact form submit
   const form = document.getElementById('contactForm');
@@ -87,26 +79,20 @@ function populatePrograms(programs) {
   }
 }
 
+
+
 function programCardHtml(p) {
   return `
   <article class="bg-white p-4 rounded shadow-sm">
     <h3 class="font-semibold text-lg">${escapeHtml(p.title)}</h3>
-    <p class="text-sm text-slate-500 mt-2">${escapeHtml(p.summary || '')}</p>
+    <p class="text-sm text-slate-500 mt-2">${escapeHtml(p.desc)}</p>
     <div class="mt-3 flex items-center justify-between text-sm">
-      <span class="px-2 py-1 border rounded text-slate-600">${escapeHtml(p.country || '')}</span>
-      <span class="text-slate-400">${escapeHtml(p.duration || '')}</span>
+      <span class="px-2 py-1 border rounded text-slate-600">${escapeHtml(p.category)}</span>
     </div>
   </article>`;
 }
 
-function programListItemHtml(p) {
-  return `
-  <article class="bg-white p-4 rounded shadow-sm">
-    <h3 class="font-semibold">${escapeHtml(p.title)}</h3>
-    <p class="text-sm text-slate-500 mt-1">${escapeHtml(p.summary || '')}</p>
-    <div class="mt-2 text-xs text-slate-500">Country: ${escapeHtml(p.country || '—')}</div>
-  </article>`;
-}
+
 
 // very small HTML escape to avoid injection when rendering API data
 function escapeHtml(unsafe) {
@@ -118,3 +104,5 @@ function escapeHtml(unsafe) {
     .replaceAll('"','&quot;')
     .replaceAll("'", '&#039;');
 }
+
+

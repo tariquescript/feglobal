@@ -72,15 +72,15 @@
 
     <!-- Popular Programs -->
     <section class="mt-12">
-      <div class="flex items-center justify-between">
-        <h2 class="text-2xl font-semibold">Popular Programs</h2>
-        <a href="./programs.html" class="text-sky-600">See all</a>
-      </div>
+  <div class="flex items-center justify-between">
+    <h2 class="text-2xl font-semibold">Popular Programs</h2>
+    <a href="./programs.html" class="text-sky-600 hover:text-sky-700">See all</a>
+  </div>
 
-      <div id="programsGrid" class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        <!-- JS will populate -->
-      </div>
-    </section>
+  <div id="programsGrid" class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <!-- JS will auto-fill the programs here -->
+  </div>
+</section>
 
     <!-- Testimonials (simple) -->
     <section class="mt-12">
@@ -114,6 +114,12 @@
     </div>
   </footer>
 
-  <script src="./js/main.js"></script>
+  <script src="./js/programs.js"></script>
+<script src="./js/programRender.js"></script>
+<script src="./js/main.js"></script>
+
+<script>
+  populatePrograms(programsData);
+</script>
 </body>
 </html>
