@@ -17,5 +17,17 @@
   },
   "devDependencies": {
     "nodemon": "^3.0.2"
-  }
+  },
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tariquescript/feglobal.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tariquescript/feglobal/issues"
+  },
+  "homepage": "https://github.com/tariquescript/feglobal#readme"
 }
