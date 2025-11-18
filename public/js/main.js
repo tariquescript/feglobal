@@ -17,8 +17,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // load programs onto index and programs pages
- populatePrograms(programsData);
+  // Load programs on index & programs page
+  if (typeof programsData !== "undefined") {
+    populatePrograms(programsData);
+  }
 
   // contact form submit
   const form = document.getElementById('contactForm');
@@ -29,10 +31,10 @@ document.addEventListener('DOMContentLoaded', () => {
       statusEl.textContent = 'Sending...';
 
       const payload = {
-         name: document.getElementById('name').value.trim(),
-  email: document.getElementById('email').value.trim(),
-  phone: document.getElementById('phone').value.trim(),
-  message: document.getElementById('message').value.trim()
+        name: document.getElementById('name').value.trim(),
+        email: document.getElementById('email').value.trim(),
+        phone: document.getElementById('phone').value.trim(),
+        message: document.getElementById('message').value.trim()
       };
 
       try {
@@ -42,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
           body: JSON.stringify(payload)
         });
         const body = await res.json();
+
         if (res.ok) {
           statusEl.textContent = 'Thanks — we will contact you soon.';
           form.reset();
@@ -55,33 +58,26 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-/**
- * Populate programs in both index and programs pages
- */
+// Populate programs
 function populatePrograms(programs) {
   // index page grid
   const idxGrid = document.getElementById('programsGrid');
   if (idxGrid) {
-    if (programs.length === 0) {
-      idxGrid.innerHTML = '<div class="col-span-full text-slate-500">No programs found.</div>';
-    } else {
-      idxGrid.innerHTML = programs.map(p => programCardHtml(p)).join('');
-    }
+    idxGrid.innerHTML = programs.length
+      ? programs.map(p => programCardHtml(p)).join('')
+      : '<div class="col-span-full text-slate-500">No programs found.</div>';
   }
 
   // programs page list
   const list = document.getElementById('programsList');
   if (list) {
-    if (programs.length === 0) {
-      list.innerHTML = '<div class="col-span-full text-slate-500">No programs found.</div>';
-    } else {
-      list.innerHTML = programs.map(p => programListItemHtml(p)).join('');
-    }
+    list.innerHTML = programs.length
+      ? programs.map(p => programListItemHtml(p)).join('')
+      : '<div class="col-span-full text-slate-500">No programs found.</div>';
   }
 }
 
-
-
+// program card
 function programCardHtml(p) {
   return `
   <article class="bg-white p-4 rounded shadow-sm">
@@ -93,17 +89,13 @@ function programCardHtml(p) {
   </article>`;
 }
 
-
-
-// very small HTML escape to avoid injection when rendering API data
+// escape HTML
 function escapeHtml(unsafe) {
   if (!unsafe && unsafe !== 0) return '';
   return String(unsafe)
     .replaceAll('&', '&amp;')
-    .replaceAll('<','&lt;')
-    .replaceAll('>','&gt;')
-    .replaceAll('"','&quot;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
     .replaceAll("'", '&#039;');
 }
-
-
