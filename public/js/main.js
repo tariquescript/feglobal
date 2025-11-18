@@ -29,9 +29,10 @@ document.addEventListener('DOMContentLoaded', () => {
       statusEl.textContent = 'Sending...';
 
       const payload = {
-        name: document.getElementById('name').value.trim(),
-        email: document.getElementById('email').value.trim(),
-        message: document.getElementById('message').value.trim()
+         name: document.getElementById('name').value.trim(),
+  email: document.getElementById('email').value.trim(),
+  phone: document.getElementById('phone').value.trim(),
+  message: document.getElementById('message').value.trim()
       };
 
       try {
