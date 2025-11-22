@@ -18,9 +18,18 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Load programs on index & programs page
-  if (typeof programsData !== "undefined") {
+if (typeof programsData !== "undefined") {
+
+  const idxGrid = document.getElementById("programsGrid");
+
+  if (idxGrid) {
+    // Home page → show only first 3
+    populatePrograms(programsData.slice(0, 3));
+  } else {
+    // Programs page → show all
     populatePrograms(programsData);
   }
+}
 
   // contact form submit
   const form = document.getElementById('contactForm');
@@ -80,14 +89,22 @@ function populatePrograms(programs) {
 // program card
 function programCardHtml(p) {
   return `
-  <article class="bg-white p-4 rounded shadow-sm">
-    <h3 class="font-semibold text-lg">${escapeHtml(p.title)}</h3>
-    <p class="text-sm text-slate-500 mt-2">${escapeHtml(p.desc)}</p>
-    <div class="mt-3 flex items-center justify-between text-sm">
-      <span class="px-2 py-1 border rounded text-slate-600">${escapeHtml(p.category)}</span>
+  <article class="bg-white rounded shadow-sm overflow-hidden hover:shadow-md transition">
+    
+    <img src="${p.img}" class="h-40 w-full object-cover" alt="${escapeHtml(p.title)}">
+
+    <div class="p-4">
+      <h3 class="font-semibold text-lg">${escapeHtml(p.title)}</h3>
+      <p class="text-sm text-slate-500 mt-2">${escapeHtml(p.desc)}</p>
+
+      <div class="mt-3 flex items-center justify-between text-sm">
+        <span class="px-2 py-1 border rounded text-slate-600">${escapeHtml(p.category)}</span>
+      </div>
     </div>
+
   </article>`;
 }
+
 
 // escape HTML
 function escapeHtml(unsafe) {
