@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Programs — FE Global (Inspired)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./css/extra.css" />
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+  <!-- Basic header reused -->
+  <header class="bg-white shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="/" class="text-2xl font-bold">FE Global</a>
+      <nav class="hidden md:flex gap-6">
+        <a href="/" class="hover:text-sky-600">Home</a>
+        <a href="./contact.html" class="hover:text-sky-600">Contact</a>
+        <a href="./about.html" class="hover:text-sky-600">About</a>
+
+      </nav>
+      <div class="md:hidden"><a href="/">Home</a></div>
+    </div>
+  </header>
+
+ <section class="max-w-6xl mx-auto px-4 py-12">
+  <h2 class="text-3xl font-bold mb-6">Our Programs</h2>
+
+  <div id="programsList" class="grid gap-6 shadow-sm sm:grid-cols-2 lg:grid-cols-3">
+    <!-- JS renders cards here -->
+  </div>
+</section> 
+
+
+
+  <footer class="bg-slate-800 text-white py-6 mt-12">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      © <span id="year2"></span> FE Global
+    </div>
+  </footer>
+
+  <!-- <script src="./js/main.js"></script> -->
+  <script src="./js/programs.js"></script>
+<script src="./js/programsRender.js"></script>
+<script src="./js/main.js"></script>
+
+</body>
+</html>
