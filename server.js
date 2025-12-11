@@ -65,16 +65,6 @@ await fetch(process.env.GOOGLE_SHEET_URL, {
   }
 });
 
-console.log("ENV:", {
-  user: process.env.EMAIL_USER,
-  pass: process.env.EMAIL_PASS ? "LOADED" : "MISSING"
-});
-
-// Fallback to index.html
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "public/index.html"));
-});
-
 // Program Form 
 
 app.post("/api/programform", async (req, res) => {
@@ -108,6 +98,18 @@ app.post("/api/programform", async (req, res) => {
     return res.status(500).json({ error: "Failed to save" });
   }
 });
+
+
+console.log("ENV:", {
+  user: process.env.EMAIL_USER,
+  pass: process.env.EMAIL_PASS ? "LOADED" : "MISSING"
+});
+
+// Fallback to index.html
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/index.html"));
+});
+
 
 
 module.exports = app;
