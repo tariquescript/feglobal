@@ -12,9 +12,11 @@ function renderPrograms() {
         <span class="inline-block  mt-2 text-xs px-3 py-1 bg-sky-100 text-sky-600 rounded-full">
           ${program.category}
         </span>
+       
       </div>
     `;
   });
 }
+
 
 renderPrograms();

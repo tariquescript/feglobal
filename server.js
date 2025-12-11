@@ -75,5 +75,40 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "public/index.html"));
 });
 
+// Program Form 
+
+app.post("/api/programform", async (req, res) => {
+  const {
+    name, phone, email,
+    reason, currentStatus, examTime,
+    date, timeSlot
+  } = req.body;
+
+  if (!name || !phone || !email || !reason || !currentStatus || !examTime || !date || !timeSlot) {
+    return res.status(400).json({ error: "All fields required" });
+  }
+
+  try {
+    // Save to Google Sheet
+    await fetch(process.env.GOOGLE_SHEET_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        type: "Program Form",
+        name, phone, email,
+        reason, currentStatus, examTime,
+        date, timeSlot
+      }),
+    });
+
+    return res.json({ success: true });
+
+  } catch (err) {
+    console.error("Sheet Error:", err);
+    return res.status(500).json({ error: "Failed to save" });
+  }
+});
+
+
 module.exports = app;
 

@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Book Free IELTS Masterclass — FE Global</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-50 text-slate-800">
+
+  <!-- NAVBAR -->
+  <header class="bg-white shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="/" class="text-2xl font-bold">FE Global</a>
+    </div>
+  </header>
+
+  <!-- FORM -->
+  <main class="max-w-2xl mx-auto px-4 py-10">
+    <h1 class="text-3xl font-semibold mb-6">Book Free IELTS Masterclass</h1>
+
+    <form id="programForm" class="space-y-6 bg-white p-6 rounded-lg shadow">
+
+      <!-- Name -->
+      <div>
+        <label class="font-medium">Full Name</label>
+        <input type="text" id="name" class="w-full mt-1 p-2 border rounded" required />
+      </div>
+
+      <!-- Phone -->
+      <div>
+        <label class="font-medium">Mobile Number</label>
+        <input type="tel" id="phone" class="w-full mt-1 p-2 border rounded" required />
+      </div>
+
+      <!-- Email -->
+      <div>
+        <label class="font-medium">Email ID</label>
+        <input type="email" id="email" class="w-full mt-1 p-2 border rounded" required />
+      </div>
+
+      <!-- Section 1 -->
+      <div>
+        <label class="font-medium">Why do you want to prepare for IELTS?</label>
+        <select id="reason" class="w-full mt-1 p-2 border rounded" required>
+          <option value="">Select</option>
+          <option>Work VISA / PR</option>
+          <option>Study Abroad</option>
+          <option>Not Decided</option>
+        </select>
+      </div>
+
+      <!-- Section 2 -->
+      <div>
+        <label class="font-medium">What are you currently doing?</label>
+        <select id="currentStatus" class="w-full mt-1 p-2 border rounded" required>
+          <option value="">Select</option>
+          <option>Student</option>
+          <option>Working</option>
+          <option>Recently Graduated</option>
+        </select>
+      </div>
+
+      <!-- Section 3 -->
+      <div>
+        <label class="font-medium">When are you giving IELTS?</label>
+        <select id="examTime" class="w-full mt-1 p-2 border rounded" required>
+          <option value="">Select</option>
+          <option>Within 3 Months</option>
+          <option>Within 3–6 Months</option>
+          <option>Already Booked</option>
+        </select>
+      </div>
+
+      <!-- Preferred Date & Time -->
+      <div>
+        <label class="font-medium">Preferred Date</label>
+        <input type="date" id="date" class="w-full mt-1 p-2 border rounded" required />
+      </div>
+
+      <div>
+        <label class="font-medium">Preferred Time Slot</label>
+        <select id="timeSlot" class="w-full mt-1 p-2 border rounded" required>
+          <option value="">Select</option>
+          <option>10:00 AM – 12:00 PM</option>
+          <option>12:00 PM – 2:00 PM</option>
+          <option>2:00 PM – 4:00 PM</option>
+          <option>4:00 PM – 6:00 PM</option>
+        </select>
+      </div>
+
+      <!-- Status -->
+      <p id="formStatus" class="text-sm text-sky-600"></p>
+
+      <button class="w-full bg-sky-600 text-white py-3 rounded text-lg">
+        Submit
+      </button>
+    </form>
+  </main>
+
+  <script src="./js/programForm.js"></script>
+
+</body>
+</html>
