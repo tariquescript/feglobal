@@ -67,35 +67,25 @@ await fetch(process.env.GOOGLE_SHEET_URL, {
 
 // Program Form 
 
-app.post("/api/programform", async (req, res) => {
-  const {
-    name, phone, email,
-    reason, currentStatus, examTime,
-    date, timeSlot
-  } = req.body;
+app.post("/api/program-form", async (req, res) => {
+  const data = req.body;
 
-  if (!name || !phone || !email || !reason || !currentStatus || !examTime || !date || !timeSlot) {
-    return res.status(400).json({ error: "All fields required" });
+  // Minimum validation
+  if (!data.name || !data.phone || !data.email) {
+    return res.status(400).json({ error: "Missing required fields" });
   }
 
   try {
-    // Save to Google Sheet
     await fetch(process.env.GOOGLE_SHEET_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        type: "Program Form",
-        name, phone, email,
-        reason, currentStatus, examTime,
-        date, timeSlot
-      }),
+      body: JSON.stringify(data)
     });
 
     return res.json({ success: true });
-
   } catch (err) {
-    console.error("Sheet Error:", err);
-    return res.status(500).json({ error: "Failed to save" });
+    console.error("Google Sheet Save Error:", err);
+    return res.status(500).json({ error: "Failed to save data" });
   }
 });
 

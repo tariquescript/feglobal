@@ -1,37 +1,40 @@
-document.getElementById("programForm").addEventListener("submit", async (e) => {
-  e.preventDefault();
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("programForm");
+  const statusEl = document.getElementById("formStatus");
 
-  const status = document.getElementById("formStatus");
-  status.textContent = "Submitting...";
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    statusEl.textContent = "Submitting...";
 
-  const data = {
-    name: document.getElementById("name").value.trim(),
-    phone: document.getElementById("phone").value.trim(),
-    email: document.getElementById("email").value.trim(),
-    reason: document.getElementById("reason").value,
-    currentStatus: document.getElementById("currentStatus").value,
-    examTime: document.getElementById("examTime").value,
-    date: document.getElementById("date").value,
-    timeSlot: document.getElementById("timeSlot").value,
-  };
+    const payload = {
+      name: document.getElementById("name").value.trim(),
+      phone: document.getElementById("phone").value.trim(),
+      email: document.getElementById("email").value.trim(),
+      reason: document.getElementById("reason").value,
+      currentStatus: document.getElementById("currentStatus").value,
+      examTime: document.getElementById("examTime").value,
+      date: document.getElementById("date").value,
+      timeSlot: document.getElementById("timeSlot").value,
+      message: "" // to match your Google Sheet header
+    };
 
-  try {
-    const res = await fetch("/api/programform", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data)
-    });
+    try {
+      const res = await fetch("/api/program-form", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
 
-    const body = await res.json();
+      const body = await res.json();
 
-    if (res.ok) {
-      status.textContent = "Form submitted successfully!";
-      e.target.reset();
-    } else {
-      status.textContent = body.error || "Something went wrong.";
+      if (res.ok) {
+        statusEl.textContent = "Successfully submitted!";
+        form.reset();
+      } else {
+        statusEl.textContent = body.error || "Submission failed!";
+      }
+    } catch (err) {
+      statusEl.textContent = "Network error. Try again.";
     }
-
-  } catch (err) {
-    status.textContent = "Network error.";
-  }
+  });
 });
