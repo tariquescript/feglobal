@@ -89,21 +89,32 @@ function populatePrograms(programs) {
 // program card
 function programCardHtml(p) {
   return `
-  <article class="bg-white rounded shadow-sm overflow-hidden hover:shadow-md transition">
-    
-    <img src="${p.img}" class="h-40 w-full object-cover" alt="${escapeHtml(p.title)}">
+    <div class="bg-white flex flex-col rounded shadow-sm overflow-hidden hover:shadow-lg transition">
 
-    <div class="p-4">
-      <h3 class="font-semibold text-lg">${escapeHtml(p.title)}</h3>
-      <p class="text-sm text-slate-500 mt-2">${escapeHtml(p.desc)}</p>
+      <!-- Program Image -->
+      <img src="${p.img}" class="h-40 w-full object-cover" />
 
-      <div class="mt-3 flex items-center justify-between text-sm">
-        <span class="px-2 py-1 border rounded text-slate-600">${escapeHtml(p.category)}</span>
+      <div class="p-4 flex flex-col flex-grow">
+        <h3 class="text-lg font-semibold">${escapeHtml(p.title)}</h3>
+        <p class="text-sm text-slate-500 mt-2">${escapeHtml(p.desc)}</p>
+
+        <span class="mt-3 text-xs px-3 py-1 bg-sky-100 text-sky-600 rounded-full w-auto inline-block self-start">
+          ${escapeHtml(p.category)}
+        </span>
+
+
+        <!-- Button -->
+        <a 
+          href="./programform.html"
+          class="mt-4 block text-center bg-sky-600 text-white py-2 rounded-lg text-sm hover:bg-sky-700 transition">
+          Book Free Masterclass
+        </a>
       </div>
-    </div>
 
-  </article>`;
+    </div>
+  `;
 }
+
 
 
 // escape HTML

@@ -89,6 +89,31 @@ app.post("/api/program-form", async (req, res) => {
   }
 });
 
+// Study Form 
+
+
+app.post("/api/study-form", async (req, res) => {
+  const data = req.body;
+
+  if (!data.name || !data.phone || !data.email) {
+    return res.status(400).json({ error: "Missing required fields" });
+  }
+
+  try {
+    await fetch(process.env.GOOGLE_SHEET_STUDY_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    });
+
+    return res.json({ success: true });
+  } catch (err) {
+    console.error("Google Sheet Save Error:", err);
+    return res.status(500).json({ error: "Failed to save data" });
+  }
+});
+
+
 
 console.log("ENV:", {
   user: process.env.EMAIL_USER,
