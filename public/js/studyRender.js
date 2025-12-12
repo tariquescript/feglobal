@@ -25,7 +25,7 @@ function renderStudyCards(data, targetId) {
       <div class="px-4 pb-4 mt-auto">
         <a 
           href="./studyform.html"
-          class="block text-center bg-sky-600 text-white py-2 rounded-lg text-sm hover:bg-sky-700 transition">
+          class="block text-center bg-[#770325] text-white py-2 rounded-lg text-sm hover:bg-[#5e021d] transition">
           Free Counselling
         </a>
       </div>

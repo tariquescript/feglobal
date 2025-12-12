@@ -1,16 +1,192 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Study in France — FE Global</title>
+
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./css/extra.css">
 </head>
 
-<body class="bg-slate-50 p-6 max-w-4xl mx-auto">
-  <h1 class="text-4xl font-bold mb-4">Study in France</h1>
-  <p class="text-slate-600">
-    France is one of the best places to study abroad with world-class universities...
-  </p>
+<body class="bg-slate-50 text-slate-800">
 
-  <a href="./studyabroad.html" class="text-sky-600 mt-4 block">← Back</a>
+ <!-- NAVBAR -->
+  <header class="bg-[#770325]  shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3">
+        <img src="./assets/main.png" alt="FE Global logo" class=" rounded-lg align-middle h-[3.75rem] w-30" />
+        <span class="text-2xl font-bold"></span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-6 text-slate-100">
+        <a href="./programs.html" class="hover:text-sky-600 ">Programs</a>
+        <a href="./studyabroad.html" class="hover:text-sky-600">Study Abroad</a>
+        <a href="./contact.html" class="hover:text-sky-600">Contact</a>
+        <a href="./about.html" class="hover:text-sky-600">About</a>
+
+        <a href="./studyform.html" class="transition hover:bg-gray-100 hover:text-slate-800 px-4 py-2 rounded bg-white text-black">Book Free Counselling</a>
+      </nav>
+
+      <!-- mobile menu -->
+      <div class="md:hidden">
+        <button id="mobileBtn" aria-label="Open menu" class="text-2xl text-white">☰</button>
+      </div>
+    </div>
+
+    <!-- Mobile nav drop -->
+    <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
+      <div class="px-4 py-3 flex flex-col gap-2">
+        <a href="./programs.html" class="py-2">Programs</a>
+        <a href="./studyabroad.html" class="py-2">Study Abroad</a>
+        <a href="./about.html" class="py-2">About</a>
+        <a href="./contact.html" class="py-2">Contact</a>
+        <a href="./studyform.html" class="py-2">Book Free Counselling</a>
+      </div>
+    </div>
+  </header>
+
+
+<!-- HERO WITH IMAGE + OUTLINE BUTTON -->
+<section class="relative w-full h-[340px] md:h-[460px] overflow-hidden">
+  <img 
+    src="./assets/france.jpg"
+    class="w-full h-full object-cover brightness-50"
+  />
+
+  <div class="absolute inset-0 flex flex-col justify-center px-6 md:px-12 max-w-5xl mx-auto">
+    <h1 class="text-4xl md:text-5xl font-bold text-white">
+      Study in France
+    </h1>
+
+    <p class="mt-4 text-lg md:text-xl text-gray-200 max-w-2xl">
+      Experience world-class education, rich culture, and excellent work opportunities in Europe’s most vibrant destination.
+    </p>
+
+    <!-- Outline Button -->
+    <a 
+      href="./studyform.html"
+      class="mt-6 w-max px-6 py-3 rounded-lg text-lg font-medium 
+             text-[#770325]  border-white backdrop-blur-sm 
+             bg-white/100 hover:bg-black/20 hover:text-white transition">
+      Book Free Counselling
+    </a>
+  </div>
+</section>
+
+
+
+  <!-- WHY STUDY -->
+  <section class="max-w-6xl mx-auto px-4 py-12">
+    <h2 class="text-3xl font-semibold">Why Study in France?</h2>
+    <p class="mt-3 text-slate-700 leading-relaxed">
+      France offers globally recognized degrees, modern campuses, and affordable education for international students.
+    </p>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+      <div class="p-4 bg-white border-l-4 border-[#770325] rounded shadow-sm">🎓 Top-ranked universities & business schools</div>
+      <div class="p-4 bg-white border-l-4 border-[#770325] rounded shadow-sm">💶 Affordable tuition fees</div>
+      <div class="p-4 bg-white border-l-4 border-[#770325] rounded shadow-sm">🏅 Scholarships available</div>
+      <div class="p-4 bg-white border-l-4 border-[#770325] rounded shadow-sm">🇪🇺 Schengen visa access</div>
+      <div class="p-4 bg-white border-l-4 border-[#770325] rounded shadow-sm">💼 Strong job opportunities</div>
+      <div class="p-4 bg-white border-l-4 border-[#770325] rounded shadow-sm">🌍 Programs in English</div>
+    </div>
+  </section>
+
+  <!-- POPULAR PROGRAMS -->
+  <section class="max-w-6xl mx-auto px-4 py-12">
+    <h2 class="text-3xl font-semibold mb-4">Popular Programs</h2>
+
+    <div class="bg-white p-6 rounded-lg shadow">
+      <ul class="list-disc ml-6 space-y-2 text-slate-700">
+        <li>Master in Management (MIM)</li>
+        <li>MBA & Executive MBA</li>
+        <li>Data Science / AI / Cloud Computing</li>
+        <li>International Business</li>
+        <li>Fashion & Luxury Brand Management</li>
+        <li>Hospitality & Tourism</li>
+        <li>Culinary Arts</li>
+        <li>Engineering (Mechanical, Electrical, Automotive)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- UNIVERSITIES -->
+  <section class="max-w-6xl mx-auto px-4 py-12">
+    <h2 class="text-3xl font-semibold mb-4">Top Universities</h2>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="p-4 bg-white rounded shadow">Paris School of Business</div>
+      <div class="p-4 bg-white rounded shadow">NEOMA Business School</div>
+      <div class="p-4 bg-white rounded shadow">KEDGE Business School</div>
+      <div class="p-4 bg-white rounded shadow">EM Lyon Business School</div>
+      <div class="p-4 bg-white rounded shadow">SKEMA Business School</div>
+      <div class="p-4 bg-white rounded shadow">Sorbonne University</div>
+      <div class="p-4 bg-white rounded shadow">Université PSL</div>
+      <div class="p-4 bg-white rounded shadow">Grenoble INP</div>
+      <div class="p-4 bg-white rounded shadow">University of Bordeaux</div>
+    </div>
+  </section>
+
+  <!-- COST OF STUDYING -->
+  <section class="max-w-6xl mx-auto px-4 py-12">
+    <h2 class="text-3xl font-semibold">Cost of Studying</h2>
+
+    <div class="bg-white p-6 rounded-lg shadow mt-4">
+      <h3 class="text-xl font-semibold text-[#770325]">Tuition Fees</h3>
+      <p class="mt-2 text-slate-700">
+        Public Universities: €2,770 – €3,770 / year<br>
+        Business Schools: €8,000 – €25,000 / year
+      </p>
+
+      <h3 class="text-xl font-semibold text-[#770325] mt-6">Cost of Living</h3>
+      <p class="mt-2 text-slate-700">
+        Paris: €900 – €1,300 / month<br>
+        Other cities: €600 – €900 / month
+      </p>
+    </div>
+  </section>
+
+  <!-- STAY BACK VISA -->
+  <section class="max-w-6xl mx-auto px-4 py-12">
+    <h2 class="text-3xl font-semibold">Post-Study Opportunities</h2>
+
+    <p class="mt-2 text-slate-700 leading-relaxed">
+      Master’s graduates can apply for a **1-year APS Post Study Work Visa**.
+      High-demand sectors include:
+    </p>
+
+    <ul class="list-disc ml-6 space-y-2 mt-3 text-slate-700">
+      <li>IT & AI</li>
+      <li>Finance</li>
+      <li>Hospitality</li>
+      <li>Business & Management</li>
+      <li>Engineering</li>
+    </ul>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="bg-[#770325] text-white py-12">
+    <div class="max-w-5xl mx-auto px-4 text-center">
+      <h3 class="text-3xl font-bold">Ready to Study in France?</h3>
+      <p class="mt-2 text-lg">Get expert counselling, profile evaluation & university shortlisting.</p>
+
+      <a 
+        href="./studyform.html"
+        class="mt-6 inline-block bg-white text-[#770325] px-6 py-3 rounded-lg font-medium hover:bg-slate-100 transition">
+        Book Free Counselling
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-800 text-white py-6 text-center mt-12">
+    © <span id="year"></span> FE Global — All Rights Reserved
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
 </body>
 </html>

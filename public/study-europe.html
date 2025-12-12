@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Study in Europe — FE Global</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./css/extra.css">
+</head>
+
+<body class="bg-slate-50 text-slate-800">
+
+ <!-- NAVBAR -->
+  <header class="bg-[#770325]  shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3">
+        <img src="./assets/main.png" alt="FE Global logo" class=" rounded-lg align-middle h-[3.75rem] w-30" />
+        <span class="text-2xl font-bold"></span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-6 text-slate-100">
+        <a href="./programs.html" class="hover:text-sky-600 ">Programs</a>
+        <a href="./studyabroad.html" class="hover:text-sky-600">Study Abroad</a>
+        <a href="./contact.html" class="hover:text-sky-600">Contact</a>
+        <a href="./about.html" class="hover:text-sky-600">About</a>
+
+        <a href="./studyform.html" class="transition hover:bg-gray-100 hover:text-slate-800 px-4 py-2 rounded bg-white text-black">Book Free Counselling</a>
+      </nav>
+
+      <!-- mobile menu -->
+      <div class="md:hidden">
+        <button id="mobileBtn" aria-label="Open menu" class="text-2xl text-white">☰</button>
+      </div>
+    </div>
+
+    <!-- Mobile nav drop -->
+    <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
+      <div class="px-4 py-3 flex flex-col gap-2">
+        <a href="./programs.html" class="py-2">Programs</a>
+        <a href="./studyabroad.html" class="py-2">Study Abroad</a>
+        <a href="./about.html" class="py-2">About</a>
+        <a href="./contact.html" class="py-2">Contact</a>
+        <a href="./studyform.html" class="py-2">Book Free Counselling</a>
+      </div>
+    </div>
+  </header>
+
+
+<!-- HERO SECTION -->
+<section class="relative w-full h-[340px] md:h-[460px] overflow-hidden">
+  <img 
+    src="./assets/europe.avif"
+    class="w-full h-full object-cover brightness-50"
+  />
+
+  <div class="absolute inset-0 flex flex-col justify-center px-6 md:px-12 max-w-5xl mx-auto">
+    <h1 class="text-4xl md:text-5xl font-bold text-white">Study in Europe</h1>
+
+    <p class="mt-4 text-lg md:text-xl text-gray-200 max-w-2xl">
+      Explore world-class education, multicultural experiences, and top career opportunities across 45+ European countries.
+    </p>
+
+    <!-- Outline Button -->
+    <a 
+      href="./studyform.html"
+      class="mt-6 w-max px-6 py-3 rounded-lg text-lg font-medium 
+             text-[#770325] bg-white border-2 border-white
+             hover:bg-black/20 hover:text-white transition">
+      Book Free Counselling
+    </a>
+  </div>
+</section>
+
+  <!-- WHY STUDY IN EUROPE -->
+  <section class="max-w-6xl mx-auto px-4 py-12">
+    <h2 class="text-3xl font-semibold">Why Study in Europe?</h2>
+
+    <p class="mt-3 text-slate-700 leading-relaxed">
+      Europe offers globally recognized degrees, excellent universities, and endless opportunities for international students.
+    </p>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+      <div class="p-4 bg-white border-l-4 border-[#770325] rounded shadow-sm">🌍 Top universities across 45+ countries</div>
+      <div class="p-4 bg-white border-l-4 border-[#770325] rounded shadow-sm">💶 Affordable tuition & scholarships</div>
+      <div class="p-4 bg-white border-l-4 border-[#770325] rounded shadow-sm">💼 Post-study work options vary by country</div>
+      <div class="p-4 bg-white border-l-4 border-[#770325] rounded shadow-sm">🛂 Travel freely across Schengen Area</div>
+      <div class="p-4 bg-white border-l-4 border-[#770325] rounded shadow-sm">🎓 High-quality education</div>
+      <div class="p-4 bg-white border-l-4 border-[#770325] rounded shadow-sm">🏙 Safe, multicultural environment</div>
+    </div>
+  </section>
+
+  <!-- POPULAR PROGRAMS -->
+  <section class="max-w-6xl mx-auto px-4 py-12">
+    <h2 class="text-3xl font-semibold mb-4">Popular Programs in Europe</h2>
+
+    <div class="bg-white p-6 rounded-lg shadow">
+      <ul class="list-disc ml-6 space-y-2 text-slate-700">
+        <li>Business & Management</li>
+        <li>Engineering & Technology</li>
+        <li>Data Science & AI</li>
+        <li>Healthcare & Nursing</li>
+        <li>Hospitality & Tourism</li>
+        <li>Medicine & Pharmacy</li>
+        <li>Architecture & Design</li>
+        <li>International Relations</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- TOP COUNTRIES -->
+  <section class="max-w-6xl mx-auto px-4 py-12">
+    <h2 class="text-3xl font-semibold">Top Countries to Study in Europe</h2>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+
+      <div class="p-4 bg-white rounded shadow">
+        <strong>🇬🇧 United Kingdom</strong>
+        <p class="mt-1 text-slate-700 text-sm">Home to Oxford, Cambridge, and 2-year post-study work visa.</p>
+      </div>
+
+      <div class="p-4 bg-white rounded shadow">
+        <strong>🇩🇪 Germany</strong>
+        <p class="mt-1 text-slate-700 text-sm">Free or low-cost education; strong STEM & engineering programs.</p>
+      </div>
+
+      <div class="p-4 bg-white rounded shadow">
+        <strong>🇫🇷 France</strong>
+        <p class="mt-1 text-slate-700 text-sm">Great for business, fashion, hospitality & scholarships.</p>
+      </div>
+
+      <div class="p-4 bg-white rounded shadow">
+        <strong>🇳🇱 Netherlands</strong>
+        <p class="mt-1 text-slate-700 text-sm">English-taught programs & high employability.</p>
+      </div>
+
+      <div class="p-4 bg-white rounded shadow">
+        <strong>🇪🇸 Spain</strong>
+        <p class="mt-1 text-slate-700 text-sm">Affordable tuition & vibrant student life.</p>
+      </div>
+
+      <div class="p-4 bg-white rounded shadow">
+        <strong>🇮🇹 Italy</strong>
+        <p class="mt-1 text-slate-700 text-sm">Rich culture, beautiful cities & affordable education.</p>
+      </div>
+
+      <div class="p-4 bg-white rounded shadow">
+        <strong>🇸🇪 Sweden</strong>
+        <p class="mt-1 text-slate-700 text-sm">Innovative education & research opportunities.</p>
+      </div>
+
+      <div class="p-4 bg-white rounded shadow">
+        <strong>🇵🇱 Poland</strong>
+        <p class="mt-1 text-slate-700 text-sm">Low tuition & cost of living; growing education hub.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TUITION FEES -->
+  <section class="max-w-6xl mx-auto px-4 py-12">
+    <h2 class="text-3xl font-semibold">Tuition Fees in Europe</h2>
+
+    <div class="bg-white p-6 rounded-lg shadow mt-4 text-slate-700">
+      <p><strong>Public Universities:</strong> €0 – €3,000 per year</p>
+      <p><strong>Private Universities:</strong> €5,000 – €20,000 per year</p>
+      <p class="mt-2">Business schools may be higher depending on institution.</p>
+    </div>
+  </section>
+
+  <!-- COST OF LIVING -->
+  <section class="max-w-6xl mx-auto px-4 py-12">
+    <h2 class="text-3xl font-semibold">Cost of Living (Approx.)</h2>
+
+    <div class="bg-white p-6 rounded-lg shadow mt-4">
+      <p class="text-slate-700">
+        <strong>Western Europe:</strong> €900 – €1,500 / month<br>
+        <strong>Central Europe:</strong> €600 – €1,000 / month<br>
+        <strong>Eastern Europe:</strong> €350 – €700 / month
+      </p>
+    </div>
+  </section>
+
+  <!-- SCHOLARSHIPS -->
+  <section class="max-w-6xl mx-auto px-4 py-12">
+    <h2 class="text-3xl font-semibold">Scholarship Options</h2>
+
+    <ul class="list-disc ml-6 space-y-2 mt-3 text-slate-700">
+      <li>Erasmus Mundus Scholarship</li>
+      <li>Country-specific scholarships (DAAD, Campus France, etc.)</li>
+      <li>University merit-based awards</li>
+      <li>Need-based financial aid</li>
+    </ul>
+  </section>
+
+  <!-- WORK OPPORTUNITIES -->
+  <section class="max-w-6xl mx-auto px-4 py-12">
+    <h2 class="text-3xl font-semibold">Work Opportunities</h2>
+
+    <ul class="list-disc ml-6 space-y-2 mt-3 text-slate-700">
+      <li>20 hours per week during studies</li>
+      <li>High demand: IT, Engineering, Healthcare, Business, Hospitality</li>
+      <li>Post-study work rules vary by country</li>
+    </ul>
+  </section>
+
+  <!-- VISA REQUIREMENTS -->
+  <section class="max-w-6xl mx-auto px-4 py-12">
+    <h2 class="text-3xl font-semibold">Visa Requirements (General)</h2>
+
+    <ul class="list-disc ml-6 space-y-2 mt-3 text-slate-700">
+      <li>Valid passport</li>
+      <li>Admission letter</li>
+      <li>Proof of funds</li>
+      <li>Health insurance</li>
+      <li>Academic documents</li>
+      <li>Visa application form</li>
+      <li>Schengen / Non-Schengen rules vary by country</li>
+    </ul>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="bg-[#770325] text-white py-12">
+    <div class="max-w-5xl mx-auto px-4 text-center">
+      <h3 class="text-3xl font-bold">Ready to Study in Europe?</h3>
+      <p class="mt-2 text-lg">Get expert counselling, scholarship guidance, and university selection support.</p>
+
+      <a 
+        href="./studyform.html"
+        class="mt-6 inline-block bg-white text-[#770325] px-6 py-3 rounded-lg font-medium hover:bg-slate-100 transition">
+        Book Free Counselling
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-800 text-white py-6 text-center mt-12">
+    © <span id="year"></span> FE Global — All Rights Reserved
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

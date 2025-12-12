@@ -89,26 +89,31 @@ function populatePrograms(programs) {
 // program card
 function programCardHtml(p) {
   return `
-    <div class="bg-white flex flex-col rounded shadow-sm overflow-hidden hover:shadow-lg transition">
+    <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition flex flex-col">
 
-      <!-- Program Image -->
-      <img src="${p.img}" class="h-40 w-full object-cover" />
+      <!-- Image -->
+      <img src="${p.img}" class="w-full h-40 object-cover" />
 
+      <!-- Content -->
       <div class="p-4 flex flex-col flex-grow">
-        <h3 class="text-lg font-semibold">${escapeHtml(p.title)}</h3>
-        <p class="text-sm text-slate-500 mt-2">${escapeHtml(p.desc)}</p>
+        
+        <h3 class="text-xl font-semibold">${escapeHtml(p.title)}</h3>
 
-        <span class="mt-3 text-xs px-3 py-1 bg-sky-100 text-sky-600 rounded-full w-auto inline-block self-start">
+        <p class="text-sm text-gray-600 mt-1 flex-grow">
+          ${escapeHtml(p.desc)}
+        </p>
+
+        <span class="inline-block mt-2 mb-2 text-xs px-3 py-1 bg-sky-100 text-sky-600 rounded-full w-fit">
           ${escapeHtml(p.category)}
         </span>
 
-
-        <!-- Button -->
+        <!-- Button aligned to bottom -->
         <a 
           href="./programform.html"
-          class="mt-4 block text-center bg-sky-600 text-white py-2 rounded-lg text-sm hover:bg-sky-700 transition">
+          class=" block text-center bg-[#770325] text-white py-2 rounded-lg text-sm hover:bg-[#5e021d] transition">
           Book Free Masterclass
         </a>
+
       </div>
 
     </div>

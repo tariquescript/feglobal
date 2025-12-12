@@ -5,11 +5,35 @@ const studyAbroadData = [
     img: "./assets/france.jpg",
     slug: "france"
   },
-  {
+    {
     title: "Study in Malta",
     desc: "Affordable European education with easy visa options.",
     img: "./assets/malta.jpg",
     slug: "malta"
+  },
+    {
+    title: "Study in Singapore",
+    desc: "World-class education, affordable tuition and vibrant student life.",
+    img: "./assets/singapore.avif",
+    slug: "singapore"
+  },
+    {
+    title: "Study in Europe",
+    desc: "World-class education, affordable tuition and vibrant student life.",
+    img: "./assets/europe.avif",
+    slug: "europe"
+  },
+    {
+    title: "Study in Canada",
+    desc: "World-class education, affordable tuition and vibrant student life.",
+    img: "./assets/canada.jpg",
+    slug: "canada"
+  },
+    {
+    title: "Study in USA",
+    desc: "World-class education, affordable tuition and vibrant student life.",
+    img: "./assets/usa.jpg",
+    slug: "usa"
   },
   {
     title: "Study in Spain",
