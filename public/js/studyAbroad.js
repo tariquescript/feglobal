@@ -46,5 +46,11 @@ const studyAbroadData = [
     desc: "Top global universities, PR pathways, and high-quality living.",
     img: "./assets/aus.jpg",
     slug: "australia"
+  },
+   {
+    title: "Study in UK",
+    desc: " World-class universities, globally recognized degrees",
+    img: "./assets/uk.jpg",
+    slug: "uk"
   }
 ];

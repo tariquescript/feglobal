@@ -30,7 +30,7 @@ programsData.forEach((p) => {
          class="mt-5 border border-[#770325] text-[#770325]
                 py-2 rounded-lg text-sm font-medium text-center
                 hover:bg-[#770325] hover:text-white transition">
-        Enquire Now
+        Book Free Masterclass
       </a>
     </div>
   `;
