@@ -48,7 +48,7 @@
   <main class="max-w-2xl mx-auto px-4 py-10">
     <h1 class="text-3xl text-[#770325] font-semibold mb-6">Book Free IELTS Masterclass</h1>
 
-    <form id="programForm" class="space-y-6 bg-white p-6 rounded-lg shadow">
+    <form onsubmit="event.preventDefault(); showPopup();" id="programForm" class="space-y-6 bg-white p-6 rounded-lg shadow">
 
       <!-- Name -->
       <div>
@@ -115,6 +115,7 @@
           <option>12:00 PM – 2:00 PM</option>
           <option>2:00 PM – 4:00 PM</option>
           <option>4:00 PM – 6:00 PM</option>
+          <option>To Be Decided</option>
         </select>
       </div>
 
@@ -223,6 +224,36 @@
   document.getElementById("year").textContent = new Date().getFullYear();
   lucide.createIcons();
 </script>
+
+
+<!-- SUCCESS POPUP -->
+<div
+  id="successPopup"
+  class="fixed inset-0 z-50 hidden items-center justify-center bg-black/50"
+>
+  <div
+    id="popupBox"
+    class="bg-white rounded-xl shadow-xl max-w-md w-full mx-4 p-6 text-center
+           transform scale-95 opacity-0 transition-all duration-300"
+  >
+    <div class="text-4xl mb-3">🎉</div>
+    <h3 class="text-xl font-bold text-slate-800">
+      Form Submitted Successfully!
+    </h3>
+    <p class="mt-2 text-sm text-slate-600">
+      Thank you for contacting FE Global.<br>
+      Our counsellor will reach out to you shortly.
+    </p>
+
+    <button
+      onclick="closePopup()"
+      class="mt-6 px-6 py-2 rounded-lg bg-[#770325] text-white text-sm font-medium"
+    >
+      Okay
+    </button>
+  </div>
+</div>
+
   
 
 </body>

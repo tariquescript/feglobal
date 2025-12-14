@@ -149,3 +149,37 @@ function escapeHtml(unsafe) {
     .replaceAll('"', '&quot;')
     .replaceAll("'", '&#039;');
 }
+
+
+
+
+// POPUP
+
+function showPopup() {
+  const popup = document.getElementById("successPopup");
+  const box = document.getElementById("popupBox");
+
+  popup.classList.remove("hidden");
+  popup.classList.add("flex");
+
+  setTimeout(() => {
+    box.classList.remove("scale-95", "opacity-0");
+    box.classList.add("scale-100", "opacity-100");
+  }, 50);
+  setTimeout(() => {
+  closePopup();
+}, 3000);
+}
+
+function closePopup() {
+  const popup = document.getElementById("successPopup");
+  const box = document.getElementById("popupBox");
+
+  box.classList.remove("scale-100", "opacity-100");
+  box.classList.add("scale-95", "opacity-0");
+
+  setTimeout(() => {
+    popup.classList.add("hidden");
+    popup.classList.remove("flex");
+  }, 300);
+}
