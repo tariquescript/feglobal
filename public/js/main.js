@@ -88,34 +88,51 @@ function populatePrograms(programs) {
 
 // program card
 function programCardHtml(p) {
+  const shortDesc = p.desc
+    .replace(/\n+/g, " ")        // remove new lines
+    .replace(/\s+/g, " ")        // normalize spaces
+    .slice(0, 120) + "…";        // limit length
+
   return `
-    <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition flex flex-col">
+    <div class="bg-white flex flex-col rounded-xl shadow-sm overflow-hidden hover:shadow-lg transition">
 
       <!-- Image -->
-      <img src="${p.img}" class="w-full h-40 object-cover" />
+      <img 
+        src="${p.img}" 
+        alt="${p.title}" 
+        class="h-40 w-full object-cover"
+      />
 
       <!-- Content -->
       <div class="p-4 flex flex-col flex-grow">
-        
-        <h3 class="text-xl font-semibold">${escapeHtml(p.title)}</h3>
 
-        <p class="text-sm text-gray-600 mt-1 flex-grow">
-          ${escapeHtml(p.desc)}
-        </p>
-
-        <span class="inline-block mt-2 mb-2 text-xs px-3 py-1 bg-sky-100 text-sky-600 rounded-full w-fit">
-          ${escapeHtml(p.category)}
+        <!-- Category -->
+        <span class="text-xs font-semibold uppercase tracking-wide
+                     text-[#770325] bg-[#770325]/10
+                     px-3 py-1 rounded-full w-max">
+          ${p.category}
         </span>
 
-        <!-- Button aligned to bottom -->
-        <a 
+        <!-- Title -->
+        <h3 class="mt-3 text-lg font-semibold text-slate-800 leading-snug">
+          ${p.title}
+        </h3>
+
+        <!-- Short Description -->
+        <p class="mt-2 text-sm text-slate-600 leading-relaxed line-clamp-3">
+          ${shortDesc}
+        </p>
+
+        <!-- CTA -->
+        <a
           href="./programform.html"
-          class=" block text-center bg-[#770325] text-white py-2 rounded-lg text-sm hover:bg-[#5e021d] transition">
+          class="mt-auto block text-center bg-[#770325] text-white
+                 py-2 rounded-lg text-sm font-medium
+                 hover:bg-[#5e021d] transition">
           Book Free Masterclass
         </a>
 
       </div>
-
     </div>
   `;
 }
