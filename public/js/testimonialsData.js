@@ -15,6 +15,14 @@ const testimonialsData = [
     review:
       "The counsellors explained everything patiently. Documentation and follow-ups were handled perfectly."
   },
+   {
+    name: " Kunal M.   ",
+    location: "Punjab, India",
+    program: "Malta Student Visa | Europe",
+    image: "./assets/kunal.jpeg",
+    review:
+      "The team handled my case with professionalism and accountability. Their experience with European visas helped avoid mistakes and delays. The final outcome was a successful visa approval."
+  },
   {
     name: "Arjun K. ",
     location: "Maharashtra, India",
@@ -106,14 +114,7 @@ const testimonialsData = [
     review:
       "The counselling was detailed and realistic. All requirements were explained clearly, and my application met embassy expectations. I strongly recommend their services to students aiming for Europe."
   },
-  {
-    name: " Kunal M.   ",
-    location: "Punjab, India",
-    program: "Malta Student Visa | Europe",
-    image: "./assets/kunal.jpeg",
-    review:
-      "The team handled my case with professionalism and accountability. Their experience with European visas helped avoid mistakes and delays. The final outcome was a successful visa approval."
-  },
+ 
   
   
   

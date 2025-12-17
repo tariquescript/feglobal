@@ -126,7 +126,7 @@ function programCardHtml(p) {
         <!-- CTA -->
         <a
           href="./programform.html"
-          class="mt-auto block text-center bg-[#770325] text-white
+          class="mt-2 block text-center bg-[#770325] text-white
                  py-2 rounded-lg text-sm font-medium
                  hover:bg-[#5e021d] transition">
           Book Free Masterclass

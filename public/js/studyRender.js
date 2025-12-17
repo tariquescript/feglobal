@@ -9,7 +9,7 @@ function renderStudyCards(data, targetId) {
   }
 
   container.innerHTML = data.map(item => `
-    <div class="bg-white flex flex-col rounded shadow-sm overflow-hidden hover:shadow-lg transition">
+    <div class="bg-white flex flex-col rounded-xl shadow-sm overflow-hidden hover:shadow-lg transition">
 
       <!-- Clickable area -->
       <a href="./study-${item.slug}.html">
