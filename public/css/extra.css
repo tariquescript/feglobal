@@ -11,3 +11,12 @@ input:focus, textarea:focus {
 @media (min-width: 1280px) {
   .hero-img { height: 420px; }
 }
+
+/* // Testimonials */
+
+.line-clamp-4 {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Student Testimonials — FE Global</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./css/extra.css" />
+</head>
+
+<body class="bg-slate-50 text-slate-800">
+
+  <!-- HEADER (reuse exactly as-is) -->
+  <!-- paste your existing header here -->
+
+  <!-- HERO -->
+  <section class="bg-[#770325] text-white py-14">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h1 class="text-4xl md:text-5xl font-extrabold">
+        What Our Students Say
+      </h1>
+      <p class="mt-4 max-w-2xl mx-auto text-white/90">
+        Real success stories from students who trusted FE Global for their study abroad journey
+      </p>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+ <section class="max-w-6xl mx-auto px-4 py-12">
+  <h1 class="text-4xl font-bold mb-8">Student Testimonials</h1>
+
+  <div
+    id="allTestimonials"
+    class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3"
+  ></div>
+</section>
+
+
+
+
+  <!-- FOOTER (reuse exactly as-is) -->
+  <!-- paste your existing footer here -->
+
+  <script src="./js/testimonialsData.js"></script>
+  <script src="./js/testimonialsRender.js"></script>
+  <script src="./js/main.js"></script>
+  <script>
+  renderTestimonials("allTestimonials"); // show all
+</script>
+</body>
+</html>

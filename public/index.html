@@ -100,14 +100,18 @@
 
 </section>
 
-    <!-- Testimonials (simple) -->
-    <section class="mt-12">
-      <h3 class="text-xl font-semibold">What students say</h3>
-      <div class="mt-4 grid gap-4 sm:grid-cols-2">
-        <blockquote class="bg-white p-4 rounded shadow-sm">“Counselling helped me shortlist universities and get a scholarship.” — Asha</blockquote>
-        <blockquote class="bg-white p-4 rounded shadow-sm">“Great test-prep resources and mock interviews.” — Rohit</blockquote>
-      </div>
-    </section>
+   <!-- TESTIMONIALS (HOME) -->
+<section class="max-w-6xl mx-auto px-4 py-12">
+  <div class="flex items-center justify-between">
+    <h2 class="text-2xl font-semibold">What Our Student Say</h2>
+    <a href="./testimonials.html" class="text-sky-600 hover:text-sky-700">See all</a>
+  </div>
+
+  <div
+    id="homeTestimonials"
+    class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+  ></div>
+</section>
 
     <!-- CTA -->
     <section id="book" class="mt-12 bg-white rounded shadow-sm text-[#770325] p-8 rounded-lg">
@@ -123,26 +127,26 @@
 
 <!-- FOOTER -->
 <footer class="bg-[#770325] text-slate-100 mt-16">
-  <div class="max-w-6xl mx-auto px-4 py-12">
+  <div class="max-w-6xl mx-auto px-4 py-12 ">
 
-    <div class="grid gap-10 md:grid-cols-3">
+    <div class="grid gap-10 md:grid-cols-3 md:justify-items-center">
 
       <!-- BRAND + ADDRESS -->
-      <div>
+      <div >
         <h3 class="text-xl font-bold">
-          <img src="./assets/main.png" alt="FE Global logo" class=" rounded-lg  h-[3.5rem] w-30" />
+          <img src="./assets/main.png" alt="FE Global logo" class=" rounded-lg  h-[3.7rem] w-30" />
 
         </h3>
 
        
 
-        <p class="mt-4 text-sm text-slate-200">
+        <p class="mt-4 text-mb text-slate-200">
           📍 Office Address<br>
           2nd Floor, XYZ Building,<br>
           Mumbai, Maharashtra, India
         </p>
 
-        <p class="mt-3 text-sm">
+        <p class="mt-3 text-mb">
           ✉️ <a href="mailto:info@feglobal.com" class="underline">
             feglobaleducation@gmail.com
           </a>
@@ -151,8 +155,8 @@
 
       <!-- QUICK LINKS -->
       <div class="max-sm:hidden">
-        <h4 class="font-semibold  mb-4">Quick Links</h4>
-        <ul class="space-y-2 text-sm text-slate-200">
+        <h4 class="font-semibold text-xl mb-4">Quick Links</h4>
+        <ul class="space-y-2 text-mb text-slate-200">
           <li><a href="./programs.html" class="hover:underline">Programs</a></li>
           <li><a href="./studyabroad.html" class="hover:underline">Study Abroad</a></li>
           <li><a href="./about.html" class="hover:underline">About Us</a></li>
@@ -162,7 +166,7 @@
 
       <!-- CONNECT -->
       <div>
-        <h4 class="font-semibold mb-4">Connect With Us</h4>
+        <h4 class="font-semibold text-xl mb-4">Connect With Us</h4>
 
         <div class="flex gap-4 mb-5">
           <a href="#" class="hover:opacity-80">
@@ -212,25 +216,28 @@
   </div>
 </footer>
 
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-  lucide.createIcons();
-</script>
-
-  <script src="./js/programs.js"></script>
+<script src="./js/programs.js"></script>
 <script src="./js/programRender.js"></script>
-<script src="./js/main.js"></script>
+
 <script src="./js/studyAbroad.js"></script>
 <script src="./js/studyRender.js"></script>
-<script>
-  renderStudyCards(studyAbroadData.slice(0, 3), "studyHome");
-</script>
+<script> renderStudyCards(studyAbroadData.slice(0, 3), "studyHome"); </script>
+
+<script src="./js/testimonialsData.js"></script>
+<script src="./js/testimonialsRender.js"></script>
+<script> renderTestimonials("homeTestimonials", 3); // show 3 only </script>
+
+<script src="./js/main.js"></script>
 
 <script src="https://unpkg.com/lucide@latest"></script>
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
   lucide.createIcons();
 </script>
+
+
+
+
 
 
 </body>
