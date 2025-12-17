@@ -125,6 +125,27 @@ Our mission is simple: to make international education accessible, transparent, 
     </div>
   </section>
 
+
+
+  <!-- Trainers card  -->
+
+  <section class="max-w-6xl mx-auto px-4 py-14">
+  <h2 class="text-3xl font-bold text-center mb-3">
+    Meet Our Expert Trainer
+  </h2>
+
+  <p class="text-center text-slate-600 max-w-2xl mx-auto mb-10">
+    Learn from experienced mentors who focus on real results, ethical guidance,
+    and long-term student success.
+  </p>
+
+  <div
+    id="trainersSection"
+    class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 justify-center"
+  ></div>
+</section>
+
+
   <!-- CTA -->
   <section class=" text-[#770325] py-12 mt-12">
     <div class="max-w-6xl mx-auto px-4 text-center">
@@ -230,7 +251,14 @@ Our mission is simple: to make international education accessible, transparent, 
 
 
   <script src="./js/main.js"></script>
-  <script>
+  <script src="./js/trainersData.js"></script>
+<script src="./js/trainersRender.js"></script>
+<script>
+  renderTrainers("trainersSection");
+</script>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+<script>
   document.getElementById("year").textContent = new Date().getFullYear();
   lucide.createIcons();
 </script>
