@@ -1,0 +1,7 @@
+name = "feglobal-api"
+main = "feglobal-api/src/index.js"
+compatibility_date = "2025-01-01"
+
+[env.production]
+vars = { GOOGLE_SHEET_URL = "https://sccd ..
+google.com/macros/s/AKfycbzTA-zP2JsP2V35vcmglKRZWwW_xT0_1k-kvvpAa6rbPrfJIY_2bvT9w_xaO9afb4d7/exec", GOOGLE_SHEET_STUDY_URL = "https://script.google.com/macros/s/AKfycbzTA-zP2JsP2V35vcmglKRZWwW_xT0_1k-kvvpAa6rbPrfJIY_2bvT9w_xaO9afb4d7/exec" }
