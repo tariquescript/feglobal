@@ -1,34 +1,31 @@
-document.getElementById("studyForm").addEventListener("submit", async (e) => {
-  e.preventDefault();
+const API_URL = "https://feglobal-api.tariquescript.workers.dev";
 
-  const status = document.getElementById("formStatus");
-  status.textContent = "Submitting...";
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("studyForm");
+  const statusEl = document.getElementById("studyStatus");
+  if (!form || !statusEl) return;
 
-  const data = {
-    name: document.getElementById("name").value.trim(),
-    phone: document.getElementById("phone").value.trim(),
-    email: document.getElementById("email").value.trim(),
-    currentStatus: document.getElementById("currentStatus").value.trim(),
-    country: document.getElementById("country").value.trim(),
-    relocateTime: document.getElementById("relocateTime").value.trim()
-  };
+  form.addEventListener("submit", async e => {
+    e.preventDefault();
+    statusEl.textContent = "Submitting...";
 
-  try {
-    const res = await fetch("/api/study-form", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data)
-    });
-
-    const body = await res.json();
-
-    if (res.ok) {
-      status.textContent = "Your request is submitted! We will contact you soon.";
-      e.target.reset();
-    } else {
-      status.textContent = body.error || "Something went wrong!";
+    const payload = {};
+    for (const el of form.elements) {
+      if (el.name) payload[el.name] = el.value.trim();
     }
-  } catch (err) {
-    status.textContent = "Network error, please try again later.";
-  }
+
+    try {
+      const res = await fetch(`${API_URL}/api/study-form`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const body = await res.json();
+      statusEl.textContent = res.ok && body.success ? "Your request is submitted! We will contact you soon." : (body.error || "Something went wrong!");
+      if (res.ok && body.success) form.reset();
+    } catch (err) {
+      console.error(err);
+      statusEl.textContent = "Network error. Please try again later.";
+    }
+  });
 });

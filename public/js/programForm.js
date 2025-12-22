@@ -1,39 +1,31 @@
+const API_URL = "https://feglobal-api.tariquescript.workers.dev";
+
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("programForm");
-  const statusEl = document.getElementById("formStatus");
+  const statusEl = document.getElementById("programStatus");
+  if (!form || !statusEl) return;
 
-  form.addEventListener("submit", async (e) => {
+  form.addEventListener("submit", async e => {
     e.preventDefault();
     statusEl.textContent = "Submitting...";
 
-    const payload = {
-      name: document.getElementById("name").value.trim(),
-      phone: document.getElementById("phone").value.trim(),
-      email: document.getElementById("email").value.trim(),
-      reason: document.getElementById("reason").value,
-      currentStatus: document.getElementById("currentStatus").value,
-      examTime: document.getElementById("examTime").value,
-      date: document.getElementById("date").value,
-      timeSlot: document.getElementById("timeSlot").value,
-      message: "" // to match your Google Sheet header
-    };
+    const payload = {};
+    for (const el of form.elements) {
+      if (el.name) payload[el.name] = el.value.trim();
+    }
+    if (!payload.message) payload.message = "";
 
     try {
-      const res = await fetch("/api/program-form", {
+      const res = await fetch(`${API_URL}/api/program-form`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload)
+        body: JSON.stringify(payload),
       });
-
       const body = await res.json();
-
-      if (res.ok) {
-        statusEl.textContent = "Successfully submitted!";
-        form.reset();
-      } else {
-        statusEl.textContent = body.error || "Submission failed!";
-      }
+      statusEl.textContent = res.ok && body.success ? "Successfully submitted!" : (body.error || "Submission failed!");
+      if (res.ok && body.success) form.reset();
     } catch (err) {
+      console.error(err);
       statusEl.textContent = "Network error. Try again.";
     }
   });
