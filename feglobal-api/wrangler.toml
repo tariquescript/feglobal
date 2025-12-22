@@ -1,5 +1,5 @@
 name = "feglobal-api"
-main = "src/index.js"
+main = "feglobal-api/src/index.js"
 compatibility_date = "2025-01-01"
 
 [env.production]
