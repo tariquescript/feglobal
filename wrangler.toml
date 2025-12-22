@@ -1,6 +1,6 @@
 name = "feglobal-api"
 main = "src/index.js"
-compatibility_date = "2025-12-23"
+compatibility_date = "2025-01-01"
 
 [env.production]
 vars = { GOOGLE_SHEET_URL = "https://sccd ..
