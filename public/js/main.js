@@ -1,5 +1,8 @@
 // public/js/main.js
 
+const API_URL = "https://feglobal-api.tariquescript.workers.dev";
+
+
 document.addEventListener('DOMContentLoaded', () => {
   // set footer years
   const year = new Date().getFullYear();
@@ -47,7 +50,7 @@ if (typeof programsData !== "undefined") {
       };
 
       try {
-        const res = await fetch('/api/contact', {
+        const res = await fetch(`${API_URL}/api/contact`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload)
