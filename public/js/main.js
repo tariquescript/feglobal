@@ -1,4 +1,4 @@
-const API_URL = "https://feglobal-api.tariquescript.workers.dev";
+const API_URL = "https://feglobal-api-production.tariquescript.workers.dev";
 
 document.addEventListener("DOMContentLoaded", () => {
   // Footer year
