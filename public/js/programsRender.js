@@ -1,40 +1,32 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const programsList = document.getElementById("programsList");
+  const container =
+    document.getElementById("programsList") ||
+    document.getElementById("programsGrid");
 
-  if (!programsList) {
-    console.warn("programsList element not found");
-    return;
-  }
+  if (!container || typeof programsData === "undefined") return;
 
-  if (typeof programsData === "undefined") {
-    console.error("programsData not loaded");
-    return;
-  }
+  // On home page, show only 3
+  const isHome = container.id === "programsGrid";
+  const list = isHome ? programsData.slice(0, 3) : programsData;
 
-  programsData.forEach((p) => {
+  list.forEach(p => {
     const card = document.createElement("div");
     card.className =
       "bg-white rounded-xl shadow hover:shadow-lg transition flex flex-col";
 
     card.innerHTML = `
-      <img src="${p.img}" alt="${p.title}"
-           class="h-44 w-full object-cover rounded-t-xl" />
-
+      <img src="${p.img}" class="h-44 w-full object-cover rounded-t-xl" />
       <div class="p-5 flex flex-col flex-grow">
         <span class="text-xs font-semibold uppercase tracking-wide
-                     text-[#770325] bg-[#770325]/10
-                     px-3 py-1 rounded-full w-max">
+          text-[#770325] bg-[#770325]/10 px-3 py-1 rounded-full w-max">
           ${p.category}
         </span>
 
-        <h3 class="mt-3 text-lg font-bold text-slate-800">
-          ${p.title}
-        </h3>
+        <h3 class="mt-3 text-lg font-bold text-slate-800">${p.title}</h3>
 
-        <div class="mt-3 text-sm text-slate-600 leading-relaxed
-                    whitespace-pre-line max-h-64 overflow-y-auto pr-2">
+        <p class="mt-3 text-sm text-slate-600 line-clamp-4">
           ${p.desc}
-        </div>
+        </p>
 
         <a href="./programform.html"
            class="mt-5 border border-[#770325] text-[#770325]
@@ -45,6 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
     `;
 
-    programsList.appendChild(card);
+    container.appendChild(card);
   });
 });
