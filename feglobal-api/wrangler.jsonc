@@ -9,7 +9,15 @@
 	"compatibility_date": "2025-12-21",
 	"observability": {
 		"enabled": true
-	}
+	},
+	"vars": {
+  "GOOGLE_SHEET_URL": "https://script.google.com/macros/s/AKfycbzTA-zP2JsP2V35vcmglKRZWwW_xT0_1k-kvvpAa6rbPrfJIY_2bvT9w_xaO9afb4d7/exec",
+  "GOOGLE_SHEET_STUDY_URL": "https://script.google.com/macros/s/AKfycbzTA-zP2JsP2V35vcmglKRZWwW_xT0_1k-kvvpAa6rbPrfJIY_2bvT9w_xaO9afb4d7/exec",
+  "TO_EMAIL": "feglobaleducation@gmail.com",
+  "DOMAIN": "feglobal-api-production.tariquescript.workers.dev"
+}
+
+	
 	/**
 	 * Smart Placement
 	 * https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
