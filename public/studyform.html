@@ -51,25 +51,25 @@
       <!-- Name -->
       <div>
         <label class="font-medium">Full Name</label>
-        <input type="text" id="name" class="w-full mt-1 p-2 border rounded" required />
+        <input type="text" id="name" name="name" class="w-full mt-1 p-2 border rounded" required />
       </div>
 
       <!-- Phone -->
       <div>
         <label class="font-medium">Mobile Number</label>
-        <input type="tel" id="phone" class="w-full mt-1 p-2 border rounded" required />
+        <input type="tel" id="phone" name="phone" class="w-full mt-1 p-2 border rounded" required />
       </div>
 
       <!-- Email -->
       <div>
         <label class="font-medium">Email ID</label>
-        <input type="email" id="email" class="w-full mt-1 p-2 border rounded" required />
+        <input type="email" id="email" name="email" class="w-full mt-1 p-2 border rounded" required />
       </div>
 
       <!-- What are you currently doing? -->
       <div>
         <label class="font-medium">What are you currently doing?</label>
-        <select id="currentStatus" class="w-full mt-1 p-2 border rounded" required>
+        <select id="currentStatus" name="currentStatus" class="w-full mt-1 p-2 border rounded" required>
           <option value="">Select</option>
           <option>Student</option>
           <option>Working</option>
@@ -80,13 +80,13 @@
       <!-- Which country -->
       <div>
         <label class="font-medium">Which country are you planning for?</label>
-        <input type="text" id="country" class="w-full mt-1 p-2 border rounded" placeholder="Australia, UK, Canada, Malta…" required />
+        <input type="text" id="country" name="country" class="w-full mt-1 p-2 border rounded" placeholder="Australia, UK, Canada, Malta…" required />
       </div>
 
       <!-- How soon -->
       <div>
         <label class="font-medium">How soon are you planning to relocate?</label>
-        <select id="relocateTime" class="w-full mt-1 p-2 border rounded" required>
+        <select id="relocateTime" name="relocateTime" class="w-full mt-1 p-2 border rounded" required>
           <option value="">Select</option>
           <option>Within 3 Months</option>
           <option>Within 6 Months</option>
@@ -95,9 +95,9 @@
         </select>
       </div>
 
-      <p id="formStatus" class="text-sm text-sky-600"></p>
+      <p id="studyStatus" class="text-sm text-sky-600"></p>
 
-      <button class="w-full bg-[#770325] text-white py-3 rounded text-lg">
+      <button type="submit" class="w-full bg-[#770325] text-white py-3 rounded text-lg">
         Submit
       </button>
 

@@ -1,3 +1,5 @@
+console.log("Study form JS loaded");
+
 const API_URL = "https://api.feglobaleducation.com";
 
 document.addEventListener("DOMContentLoaded", () => {
