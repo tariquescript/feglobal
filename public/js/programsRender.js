@@ -1,6 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
   const programsList = document.getElementById("programsList");
-  if (!programsList) return;
+
+  if (!programsList) {
+    console.warn("programsList element not found");
+    return;
+  }
+
+  if (typeof programsData === "undefined") {
+    console.error("programsData not loaded");
+    return;
+  }
 
   programsData.forEach((p) => {
     const card = document.createElement("div");
