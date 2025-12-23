@@ -53,25 +53,25 @@
       <!-- Name -->
       <div>
         <label class="font-medium">Full Name</label>
-        <input type="text" id="name" class="w-full mt-1 p-2 border rounded" required />
+        <input type="text" name="name"  id="name" class="w-full mt-1 p-2 border rounded" required />
       </div>
 
       <!-- Phone -->
       <div>
         <label class="font-medium">Mobile Number</label>
-        <input type="tel" id="phone" class="w-full mt-1 p-2 border rounded" required />
+        <input type="tel" id="phone" name="phone" class="w-full mt-1 p-2 border rounded" required />
       </div>
 
       <!-- Email -->
       <div>
         <label class="font-medium">Email ID</label>
-        <input type="email" id="email" class="w-full mt-1 p-2 border rounded" required />
+        <input type="email" id="email" name="email" class="w-full mt-1 p-2 border rounded" required />
       </div>
 
       <!-- Section 1 -->
       <div>
         <label class="font-medium">Why do you want to prepare for IELTS?</label>
-        <select id="reason" class="w-full mt-1 p-2 border rounded" required>
+        <select id="reason" name="reason" class="w-full mt-1 p-2 border rounded" required>
           <option value="">Select</option>
           <option>Work VISA / PR</option>
           <option>Study Abroad</option>
@@ -82,7 +82,7 @@
       <!-- Section 2 -->
       <div>
         <label class="font-medium">What are you currently doing?</label>
-        <select id="currentStatus" class="w-full mt-1 p-2 border rounded" required>
+        <select id="currentStatus" name="currentStatus" class="w-full mt-1 p-2 border rounded" required>
           <option value="">Select</option>
           <option>Student</option>
           <option>Working</option>
@@ -93,7 +93,7 @@
       <!-- Section 3 -->
       <div>
         <label class="font-medium">When are you giving IELTS?</label>
-        <select id="examTime" class="w-full mt-1 p-2 border rounded" required>
+        <select id="examTime" name="examTime" class="w-full mt-1 p-2 border rounded" required>
           <option value="">Select</option>
           <option>Within 3 Months</option>
           <option>Within 3–6 Months</option>
@@ -104,12 +104,12 @@
       <!-- Preferred Date & Time -->
       <div>
         <label class="font-medium">Preferred Date</label>
-        <input type="date" id="date" class="w-full mt-1 p-2 border rounded" required />
+        <input type="date" id="date" name="date"  class="w-full mt-1 p-2 border rounded" required />
       </div>
 
       <div>
         <label class="font-medium">Preferred Time Slot</label>
-        <select id="timeSlot" class="w-full mt-1 p-2 border rounded" required>
+        <select id="timeSlot" name="timeSlot" class="w-full mt-1 p-2 border rounded" required>
           <option value="">Select</option>
           <option>10:00 AM – 12:00 PM</option>
           <option>12:00 PM – 2:00 PM</option>
@@ -120,9 +120,9 @@
       </div>
 
       <!-- Status -->
-      <p id="formStatus" class="text-sm text-sky-600"></p>
+      <p id="programStatus" class="text-sm text-sky-600"></p>
 
-      <button class="w-full bg-[#770325] text-white py-3 rounded text-lg">
+      <button type="submit" class="w-full bg-[#770325] text-white py-3 rounded text-lg">
         Submit
       </button>
     </form>
