@@ -82,7 +82,7 @@
     <a href="./programs.html" class="text-sky-600 hover:text-sky-700">See all</a>
   </div>
 
-  <div id="programsGrid" class="  mt-6 grid  gap-6 sm:grid-cols-2 lg:grid-cols-3">
+  <div id="homePrograms" class="  mt-6 grid  gap-6 sm:grid-cols-2 lg:grid-cols-3">
     <!-- JS will auto-fill the programs here -->
   </div>
 
@@ -221,6 +221,9 @@
 
 <script src="./js/programs.js"></script>
 <script src="./js/programsRender.js"></script>
+<script>
+  renderProgramCards(programsData, "homePrograms", 3);
+</script>
 
 <script src="./js/studyAbroad.js"></script>
 <script src="./js/studyRender.js"></script>
@@ -229,6 +232,7 @@
 <script src="./js/testimonialsData.js"></script>
 <script src="./js/testimonialsRender.js"></script>
 <script> renderTestimonials("homeTestimonials", 3); // show 3 only </script>
+
 
 <script src="./js/main.js"></script>
 

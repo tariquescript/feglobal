@@ -1,32 +1,58 @@
-function renderStudyCards(data, targetId) {
+function renderProgramCards(data, targetId, limit = null) {
   const container = document.getElementById(targetId);
-
   if (!container) return;
 
-  if (data.length === 0) {
-    container.innerHTML = '<div class="text-slate-500">No study abroad options.</div>';
+  const programs = limit ? data.slice(0, limit) : data;
+
+  if (!programs || programs.length === 0) {
+    container.innerHTML =
+      '<p class="text-slate-500">No programs available.</p>';
     return;
   }
 
-  container.innerHTML = data.map(item => `
-    <div class="bg-white flex flex-col rounded-xl shadow-sm overflow-hidden hover:shadow-lg transition">
+  container.innerHTML = programs.map(p => `
+    <div class="bg-white flex flex-col rounded-xl border shadow-sm
+                hover:shadow-lg transition overflow-hidden">
 
-      <!-- Clickable area -->
-      <a href="./study-${item.slug}.html">
-        <img src="${item.img}" class="h-40 w-full object-cover" />
+      <!-- Image + Content -->
+      <a href="./programform.html" class="block group">
+        <img 
+          src="${p.img}"
+          alt="${p.title}"
+          loading="lazy"
+          onerror="this.src='./assets/placeholder.jpg'"
+          class="h-40 w-full object-cover
+                 group-hover:scale-105 transition-transform"
+        />
 
         <div class="p-4">
-          <h3 class="text-lg font-semibold">${item.title}</h3>
-          <p class="text-sm text-slate-500 mt-1">${item.desc}</p>
+          <!-- Category -->
+          <span class="inline-block text-xs font-semibold
+                       text-[#770325] bg-[#770325]/10
+                       px-2 py-0.5 rounded-full mb-2">
+            ${p.category}
+          </span>
+
+          <h3 class="text-lg font-semibold text-slate-800">
+            ${p.title}
+          </h3>
+
+          <!-- Short description -->
+          <p class="text-sm text-slate-500 mt-1 line-clamp-3">
+            ${p.desc}
+          </p>
         </div>
       </a>
 
-      <!-- Button fixed at bottom -->
+      <!-- CTA -->
       <div class="px-4 pb-4 mt-auto">
-        <a 
-          href="./studyform.html"
-          class="block text-center bg-[#770325] text-white py-2 rounded-lg text-sm hover:bg-[#5e021d] transition">
-          Free Counselling
+        <a
+          href="./programform.html"
+          aria-label="Enquire about ${p.title}"
+          class="block text-center border border-[#770325]
+                 text-[#770325] py-2 rounded-lg text-sm font-medium
+                 hover:bg-[#770325] hover:text-white transition">
+          Enquire Now
         </a>
       </div>
 

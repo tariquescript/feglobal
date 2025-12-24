@@ -154,11 +154,16 @@
   <!-- <script src="./js/main.js"></script> -->
   <script src="./js/programs.js"></script>
 <script src="./js/programsRender.js"></script>
+<script>
+  renderProgramCards(programsData, "programsList");
+</script>
 <script src="./js/main.js"></script>
 <script src="https://unpkg.com/lucide@latest"></script>
 <script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-  lucide.createIcons();
+  const yearEl = document.getElementById("year");
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
 </script>
 
 </body>
